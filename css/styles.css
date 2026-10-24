@@ -188,14 +188,16 @@ section[id] { scroll-margin-top: calc(var(--nav-h) - 4px); }
 .hero__text { text-align: center; }
 .hero__shloka { color: var(--gold); font-size: .95rem; letter-spacing: .1em; margin-bottom: .8em; }
 .hero__pre { text-transform: uppercase; letter-spacing: .32em; font-size: .78rem; color: var(--ink-soft); }
-.hero__names { display: flex; flex-direction: column; align-items: center; font-family: var(--f-script); font-weight: 400; line-height: .95; margin: .1em 0 .1em; }
+.hero__names { display: flex; flex-direction: column; align-items: center; font-family: var(--f-script); font-weight: 400; line-height: 1.2; margin: 0; }
 .hero__name {
-  font-size: clamp(4.2rem, 11vw, 8.2rem);
+  font-size: clamp(4rem, 9vw, 7.2rem);
   background: linear-gradient(120deg, var(--rose-deep), #D86B8C 40%, #B07AC4 70%, var(--rose-deep));
   background-size: 200% auto; -webkit-background-clip: text; background-clip: text; color: transparent;
-  animation: shimmer 8s linear infinite; padding: 0 .12em;
+  animation: shimmer 8s linear infinite;
+  /* padding gives script flourishes room inside the clipped gradient; negative margin keeps the stack tight */
+  display: block; padding: .18em .4em .12em; margin: -.16em 0;
 }
-.hero__amp { font-size: clamp(2.6rem, 6vw, 4.2rem); color: var(--gold); margin: -.1em 0; }
+.hero__amp { font-size: clamp(2.4rem, 5vw, 3.6rem); color: var(--gold); line-height: 1; margin: -.05em 0; position: relative; z-index: 1; }
 @keyframes shimmer { to { background-position: 200% center; } }
 .hero__tag { font-family: var(--f-serif); font-style: italic; font-size: clamp(1.4rem, 3vw, 1.9rem); color: var(--ink); margin-bottom: .7em; }
 .hero__date { display: inline-flex; align-items: center; gap: .6em; padding: .6em 1.3em; border-radius: 999px; background: rgba(255,255,255,.65); border: 1px solid rgba(194,154,72,.5); font-family: var(--f-serif); font-weight: 600; font-size: clamp(1rem, 2.4vw, 1.2rem); letter-spacing: .05em; }
